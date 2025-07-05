@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import '../components/styles/Header.css';
+import '../components/styles/header.css';
 import Logo from '../assets/INTERA LOGO 1 .png'
 import { Link } from 'react-router-dom';
 
