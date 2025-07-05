@@ -1,4 +1,4 @@
-import CardService from "./CardService";
+import CardService from "../components/CardService";
 import "../components/styles/CardsContainer.css";
 import card1 from '../assets/top.png'
 const CardsContainer = () => {
