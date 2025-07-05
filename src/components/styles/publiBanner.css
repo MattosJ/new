@@ -1,0 +1,17 @@
+.BannerPubli-container{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    
+}
+.BannerPubli-img{
+    width: 100%;
+    display: flex;
+   
+}
+.BannerPubli-img img{
+    width: 100%;
+    border-radius: 30px;
+}

@@ -1,0 +1,9 @@
+.Content-service{
+  position: relative;
+  z-index: 0;
+}
+.page-title-service{
+  text-align: left;
+  padding-top: 1.5rem;
+  padding-left: 2rem;
+}

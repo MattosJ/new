@@ -1,0 +1,29 @@
+.main-content{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    background-color: #F3F9F9;
+}
+.Content-quemsomos{
+    background-color: #f7f7f75e !important;
+}
+.page-title{
+    text-align: center;
+    padding: 1.2rem 1rem;
+}
+.main-text{
+    margin-top: 1rem;
+    text-align: justify;
+    line-height: 1.5rem;
+    display: flex;
+    width: 50%;
+}
+.content-img{
+    display: flex;
+    width: 40%;
+    margin-top: 1rem;
+}
+.content-img img{
+    width: 100%;
+}

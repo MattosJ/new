@@ -1,0 +1,13 @@
+.Top-Header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0097A3;
+    height: 38px;
+    color:white;
+    text-transform: uppercase;
+}
+.Top-Header h1{
+    font-size: 14px;
+    font-weight: bolder;
+}

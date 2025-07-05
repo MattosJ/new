@@ -1,0 +1,8 @@
+.decorationP {
+  width: 164px;
+  height: 164px;
+  border-radius: 50%;
+  background-color: #FF0391;
+  position: absolute;       
+  z-index: 0;               
+}

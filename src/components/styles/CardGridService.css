@@ -1,0 +1,114 @@
+.card-grid-service {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(33%, 5fr));
+  gap: 0rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 1.4rem auto;
+}
+
+.card-service {
+  background-color: transparent;
+  perspective: 1000px;
+  height: 400px;
+  position: relative;
+  margin: 20px;
+}
+
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1.5s ease;
+}
+
+.card-service:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-front {
+  background-color: transparent;
+  flex-direction: column;
+}
+
+.card-back {
+  background-color: transparent;
+  transform: rotateY(180deg);
+  padding: 1rem;
+  border: 3px solid #eeeeee;
+}
+
+.card-img {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.card-title-service{
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 1rem;
+  background-color: transparent;
+  transition: 0.5s ease-in-out;
+  
+}
+
+.card-title-service h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #ffffffc8;
+  font-family: "Montserrat", sans-serif;
+}
+
+.card-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  opacity: 1;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.card-description p {
+  color: #555;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .card-grid-service {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-grid-service {
+    grid-template-columns: 1fr;
+  }
+}

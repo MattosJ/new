@@ -1,0 +1,101 @@
+.bannerTI-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 60px 80px;
+  background-color: #ffffff;
+  gap: 40px;
+}
+
+.bannerTI-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+
+.bannerTI-text {
+  margin-bottom: 30px;
+}
+
+.bannerTI-Title {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 20px;
+}
+
+.bannerTI-description {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.bannerTI-btn a {
+  display: inline-block;
+  background-color: #00a9a4;
+  color: white;
+  font-weight: 500;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.bannerTI-btn a:hover {
+  background-color: #008b88;
+}
+
+.bannerTI-image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bannerTI-image img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+@media (max-width: 992px) {
+  .bannerTI-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .bannerTI-infos {
+    width: 100%;
+    align-items: center;
+  }
+
+  .bannerTI-text {
+    margin-bottom: 20px;
+  }
+
+  .bannerTI-Title {
+    font-size: 2rem;
+  }
+
+  .bannerTI-description {
+    font-size: 1rem;
+  }
+
+  .bannerTI-btn {
+    justify-content: center;
+  }
+
+  .bannerTI-image {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .bannerTI-image img {
+    max-width: 100%;
+    height: auto;
+  }
+}

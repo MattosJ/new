@@ -1,0 +1,48 @@
+.decoretion-conection {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.top-circle {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-color: #007BFF;
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+}
+
+.bottom-circle {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-color: #007BFF;
+  border-radius: 50%;
+  bottom: 0;
+  left: 0;
+}
+
+.middle-blob {
+  position: absolute;
+  top: 60px;
+  left: 170px;
+  width: 70px;
+  height: 80px;
+  background-color: #007BFF;
+  border-radius: 20px;
+  transform: rotate(140deg);
+  transform-origin: center;
+}
+.middle-blob-2{
+  position: absolute;
+  top: 70px;
+  left: 160px;
+  width: 70px;
+  height: 80px;
+  background-color: #007BFF;
+  border-radius: 30px;
+  transform: rotate(140deg);
+  transform-origin: center;
+}
