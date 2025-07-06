@@ -35,8 +35,15 @@
 @media (max-width: 768px) {
   .banner-info-title{
     font-size: 1.2rem;
+    text-align: center;
+  }
+  .banner-info-subtitle{
+    text-align: center;
   }
   .banner-wrapper{
     height: 400px;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 0;
   }
 }
