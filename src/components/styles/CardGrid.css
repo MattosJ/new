@@ -141,4 +141,7 @@
   .card-grid {
     grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
   }
+  .card-grid-major-title{
+    font-size: 2rem;
+  }
 }

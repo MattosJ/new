@@ -30,3 +30,13 @@
   font-weight: lighter;
   line-height: 1;
 }
+
+
+@media (max-width: 768px) {
+  .banner-info-title{
+    font-size: 1.2rem;
+  }
+  .banner-wrapper{
+    height: 400px;
+  }
+}
