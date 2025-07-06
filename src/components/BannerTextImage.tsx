@@ -1,6 +1,6 @@
 import React from 'react';
 import '../components/styles/bannerTI.css';
-import BannerBg from '../assets/banner-ti.png'; // ajuste o caminho conforme necessário
+import BannerBg from '../assets/banner-ti.png';
 
 interface BannerTextImageProps {
   title: string;

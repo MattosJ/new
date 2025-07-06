@@ -1,0 +1,61 @@
+.peopleCard-wrapper{
+  display: flex;
+  padding: 1.5rem;
+  align-items: center;
+  gap: 2.5rem;
+  flex-direction: column;
+}
+.peopleCard-title {
+  font-size: 4rem;
+  color: #000;
+  font-weight: 200;
+}
+.peopleCard-container-cards{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 auto;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.presentation-card{
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  width: 20%;
+  align-items: center;
+}
+.presentation-img{
+  width: 75%;
+}
+.presentation-img img{
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+}
+.presentation-name{
+  font-size: 1.5rem;
+  color: #000;
+}
+.presentation-description{
+  font-size: 0.85;
+  color: #000;
+}
+
+@media (max-width: 992px){
+  .presentation-card{
+    width: 47%;
+  }
+  .peopleCard-title {
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .presentation-card{
+    width: 100%;
+  }
+}
