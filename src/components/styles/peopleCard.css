@@ -58,4 +58,10 @@
   .presentation-card{
     width: 100%;
   }
+  .peopleCard-title {
+    font-size: 2.5rem;
+  }
+  .presentation-img{
+    width: 50%;
+  }
 }
