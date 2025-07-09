@@ -1,0 +1,57 @@
+.postBanner-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 2.75rem;
+  gap: 2rem;
+  background-color: #D9D9D9;
+}
+.postBanner-content{
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: start;
+  justify-content: center;
+}
+.postBanner-linkText{
+  color: #0097A3;
+  font-size: 1rem;
+}
+.postBanner-title{
+  color: #000000;
+  font-size: 3rem;
+  font-weight: bold;
+}
+.postBanner-author{
+  font-size: 1rem;
+  color: #000;
+  font-weight: bold;
+}
+.postBanner-date{
+  font-size: 1rem;
+  color: #000;
+}
+.postBanner-img{
+  display: flex;
+  width: 50%;
+}
+.postBanner-img img{
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .postBanner-container {
+    flex-direction: column;
+  }
+
+  .postBanner-content,
+  .postBanner-img {
+    width: 100%;
+  }
+
+  .postBanner-img img {
+    width: 100%;
+    height: auto;
+  }
+}

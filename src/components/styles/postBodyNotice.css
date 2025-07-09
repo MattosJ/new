@@ -1,0 +1,14 @@
+.post-body-notice{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  width: 80%;
+}
+.post-body-notice-title{
+  color: #0097a3;
+  font-weight: bold;
+}
+.post-body-notice-subtitle{
+  color: #0097a3;
+}
