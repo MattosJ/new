@@ -18,6 +18,7 @@
 .card-grid-major-title{
   font-size: 3rem;
   text-align: center;
+  font-weight: normal;
 }
 .card-grid-wrapper{
   background-color: #EFF6F7;

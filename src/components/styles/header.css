@@ -19,7 +19,7 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  height: 100%;
+  height: 76%;
 }
 .logo img{
   height: 100%;
@@ -30,7 +30,7 @@
   list-style: none;
 }
 .nav-list a{
-  font-size: 15px;
+  font-size: 20px;
   color: #000000;
   padding-block: 15px;
   font-weight: bolder;
