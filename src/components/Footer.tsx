@@ -10,7 +10,7 @@ const Footer = () =>{
         <div className='logo-footer'>
           <h1>Intera Criativa</h1>
         </div>
-        <nav className='redes-sociais-footer'>
+        <ul className='redes-sociais-footer'>
 
           <li><a href='https://www.facebook.com/interacriativa'><img className='redes-sociais-icones-footer' src={Facebook} alt='Facebook'/></a></li>
           <li><a href=""><img className='redes-sociais-icones-footer' src={whatsapp} alt='Whatsapp'/></a></li>
@@ -18,7 +18,7 @@ const Footer = () =>{
           <li><a href='https://www.instagram.com/interacriativa/'><img className='redes-sociais-icones-footer' src={Instagram} alt='Instagram'/></a></li> 
 
 
-        </nav>
+        </ul>
     </div>
     <div className='menus-wrapper'>
       <nav className='menu-2-footer'>
