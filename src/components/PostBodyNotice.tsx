@@ -1,4 +1,5 @@
 import "../components/styles/postBodyNotice.css"
+import ShareMenu from "./ShareMenu";
 interface PostBodyNoticeProps{
   initText : string;
   title1 : string;
@@ -22,6 +23,8 @@ interface PostBodyNoticeProps{
   afterImage2Text2 : string;
 }
 const PostBodyNotice:React.FC<PostBodyNoticeProps> = ({initText,title1,descriptionTitle1,image,textAfterImage,listItem1,listItem2,listItem3,listItem4,subtitle,afterSubtitleText,afterSubtitleText2,title2,afterTitle2Text1,afterTitle2Text2,afterTitle2Text3,image2,ImgLegend,afterImage2Text1,afterImage2Text2}) => {
+  const url = window.location.href
+  const titulo = "Título da notícia"
   return(
     <div className  = "post-body-notice" >
       <p>{initText}</p>
@@ -46,7 +49,10 @@ const PostBodyNotice:React.FC<PostBodyNoticeProps> = ({initText,title1,descripti
       <p>{ImgLegend}</p>
       <p>{afterImage2Text1}</p>
       <p>{afterImage2Text2}</p>
-
+      <div className='shareMenu-container'>
+        <h2 className='shareMenu-title'>Compartilhe</h2>
+        <ShareMenu url={url} title={titulo} />
+    </div>
     </div>
   )
 }

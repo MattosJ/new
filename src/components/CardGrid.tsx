@@ -9,6 +9,7 @@ interface Card {
   title: string;
   description: string;
   image: string;
+  imageAlt : string;
   link: string;
 }
 
@@ -19,21 +20,24 @@ const CardGrid = () => {
       title: "Serviços",
       description: "Descrição do card 2. Clique em ver mais para detalhes.",
       image: servicos,
-      link: "/servicos"
+      link: "/servicos",
+      imageAlt:"Descrição da imagem"
     },
     {
       id: 2,
       title: "Projetos",
       description: "Descrição do card 3. Clique em ver mais para detalhes.",
       image: projetos,
-      link: "/nossos-projetos"
+      link: "/nossos-projetos",
+      imageAlt:"Descrição da imagem"
     },
     {
       id: 3,
       title: "Blog",
       description: "Descrição do card 5. Clique em ver mais para detalhes.",
       image: blog,
-      link: "/blog"
+      link: "/blog",
+      imageAlt:"Descrição da imagem"
     },
   ];
 

@@ -4,11 +4,13 @@ import PostCard from './PostCard';
 import image from "../assets/10.png"
 import PostSideMenu from './PostSideMenu';
 import PostBodyNotice from './PostBodyNotice';
+
 interface PostContainerProps{
   title : string;
   textLinkPost : string;
 }
 const PostContainer:React.FC<PostContainerProps> = ({title,textLinkPost}) => {
+    
   return(
     <>
     <div className="PostContainer">
@@ -28,6 +30,9 @@ Donec id molestie ex. In sodales sapien cursus, bibendum eros et, aliquet neque.
   afterImage2Text1='dignissim, nulla eget sollicitudin lacinia, enim odio lobortis arcu, vitae sagittis risus eros sit amet nulla. Vestibulum varius lacus at nunc tristique imperdiet. Etiam sed tincidunt turpis. Aenean ornare, mi quis cursus semper, dolor enim lacinia risus, id tristique libero lorem gravida metus. Etiam eu mollis eros. Donec at urna nec erat tempus auctor at ut dui.'
   afterImage2Text2='dignissim, nulla eget sollicitudin lacinia, enim odio lobortis arcu, vitae sagittis risus eros sit amet nulla. Vestibulum varius lacus at nunc tristique imperdiet. Etiam sed tincidunt turpis. Aenean ornare, mi quis cursus semper, dolor enim lacinia risus, id tristique libero lorem gravida metus. Etiam eu mollis eros. Donec at urna nec erat tempus auctor at ut dui.' />
     </div>
+
+    
+
     <div className="menuPost">
       <h2 className='post-Title'>{title}</h2>
       <Link to="/blog" className='post-link'>{textLinkPost}</Link>

@@ -18,7 +18,8 @@ interface ContactBannerProps {
   adtinionalInfo?: string;
   forWho?: string;
   forWhoColor?: string;
-  adtinionalInfoColor?:string
+  adtinionalInfoColor?:string;
+  imageAlt ?: string;
 }
 
 const ContactBanner: React.FC<ContactBannerProps> = ({
@@ -37,6 +38,7 @@ const ContactBanner: React.FC<ContactBannerProps> = ({
   buttonTextColor,
   forWhoColor,
   adtinionalInfoColor,
+  imageAlt = 'Imagem de contato',
 }) => {
   const isEven = id % 2 === 0;
   const flexDirection = isEven ? 'row-reverse' : 'row';
@@ -82,7 +84,7 @@ const ContactBanner: React.FC<ContactBannerProps> = ({
         </Link>
       </div>
       <div className="contact-banner-image">
-        <img src={BannerImage} alt="Ilustração Contato" />
+        <img src={BannerImage} alt={imageAlt} />
       </div>
     </section>
   );

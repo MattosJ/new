@@ -12,10 +12,10 @@ const Footer = () =>{
         </div>
         <nav className='redes-sociais-footer'>
 
-          <li><a href=''><img className='redes-sociais-icones-footer' src={Facebook}/></a></li>
-          <li><a href=""><img className='redes-sociais-icones-footer' src={whatsapp}/></a></li>
-          <li><a href=''><img className='redes-sociais-icones-footer' src={Youtube}/></a></li> 
-          <li><a href=''><img className='redes-sociais-icones-footer' src={Instagram}/></a></li> 
+          <li><a href='https://www.facebook.com/interacriativa'><img className='redes-sociais-icones-footer' src={Facebook} alt='Facebook'/></a></li>
+          <li><a href=""><img className='redes-sociais-icones-footer' src={whatsapp} alt='Whatsapp'/></a></li>
+          <li><a href='https://www.youtube.com/@interacriativa846'><img className='redes-sociais-icones-footer' src={Youtube} alt='Youtube'/></a></li> 
+          <li><a href='https://www.instagram.com/interacriativa/'><img className='redes-sociais-icones-footer' src={Instagram} alt='Instagram'/></a></li> 
 
 
         </nav>

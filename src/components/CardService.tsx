@@ -10,7 +10,7 @@ type CardServiceProps = {
   onButtonClick?: () => void;
   style?: React.CSSProperties;
   className?: string;
-  themeColor?: string; // NOVA PROP
+  themeColor?: string;
 };
 
 const CardService: React.FC<CardServiceProps> = ({
@@ -23,7 +23,7 @@ const CardService: React.FC<CardServiceProps> = ({
   onButtonClick,
   style = {},
   className = "",
-  themeColor = "#00a7e1", // cor padrão
+  themeColor = "#00a7e1",
 }) => {
   return (
     <div

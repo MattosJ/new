@@ -61,7 +61,18 @@
   padding: 2rem;
   gap: 2rem;
 }
-
+.shareMenu-container{
+  display: flex;
+  width: 100%;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+.shareMenu-title{
+  color: #000;
+  font-size: 2.5rem;
+}
 
 @media (max-width: 992px) {
   .postsCards-container {
