@@ -16,7 +16,7 @@ const BannerTextImage: React.FC<BannerTextImageProps> = ({ title, subtitle }) =>
     >
       <div className="banner-info-field">
         <h2 className="banner-info-title">{title}</h2>
-        <h4 className="banner-info-subtitle">{subtitle}</h4>
+        <h3 className="banner-info-subtitle">{subtitle}</h3>
       </div>
     </div>
   );
