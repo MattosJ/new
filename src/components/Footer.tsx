@@ -23,16 +23,16 @@ const Footer = () =>{
     <div className='menus-wrapper'>
       <nav className='menu-2-footer'>
         <ul>
-          <Link to="/"><li>Ínicio </li></Link>
-          <Link to="/servicos"><li>Serviços</li></Link>
-          <Link to="/nossos-projetos"><li>Projetos</li></Link>
+          <li><Link to="/">Ínicio</Link></li>
+          <li><Link to="/servicos">Serviços</Link></li>
+          <li><Link to="/nossos-projetos">Projetos</Link></li>
       </ul>
       </nav>
       <nav className='menu-3-footer'>
         <ul>
-          <Link to="/por-onde-passamos"><li>Trajetória </li></Link>
-          <Link to="/blog"><li>Blog </li></Link>
-          <Link to="/fale-conosco"><li>Contato</li></Link>
+          <li><Link to="/por-onde-passamos">Trajetória</Link></li>
+          <li><Link to="/blog">Blog</Link></li>
+          <li><Link to="/fale-conosco">Contato</Link></li>
         </ul>
       </nav>
     
