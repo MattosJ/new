@@ -141,3 +141,14 @@ app.listen(PORT, () => {
 O servidor Express é iniciado na porta especificada no .env ou, por padrão, na 5000.
 
 
+src
+├── Routes
+  ├── NotionRoutes.ts
+├──index.ts
+.env
+
+EMAIL_USER == Email
+EMAIL_PASS == Senha para usar em aplicativos
+REACT_APP_API_URL 
+NOTION_API_KEY == chave da API notion 
+NOTION_DATABASE_ID == Id da base de dados notion
