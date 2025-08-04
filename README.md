@@ -149,6 +149,6 @@ src
 
   - EMAIL_USER == Email
   - EMAIL_PASS == Senha para usar em aplicativos
-  - REACT_APP_API_URL 
+  - REACT_APP_API_URL == URL base do back-end
   - NOTION_API_KEY == chave da API notion 
   - NOTION_DATABASE_ID == Id da base de dados notion
