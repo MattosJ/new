@@ -66,3 +66,78 @@ site_intera-em-producao-dev-novo/
 └── vite.config.ts # Configuração do Vite
 
 
+## Explicação do código
+### back-end
+
+src
+├── Routes
+  ├── NotionRoutes.ts
+
+Este arquivo contém as rotas da API responsáveis por integrar o backend com a Notion API, tanto para buscar todos os posts quanto para buscar um post específico. Também define a estrutura esperada dos dados que serão utilizados no frontend.
+
+ Função mapNotionProperties
+ Responsável por converter uma página da Notion no formato definido pela interface NotionPost.
+
+  getText: extrai texto plano dos campos rich_text ou text.
+
+  getImage: extrai a URL da primeira imagem (do tipo file) em um campo de arquivos.
+
+  Essa função permite normalizar os dados da Notion antes de usá-los no frontend.
+
+Rota: GET /post/:id
+  Busca um post específico da Notion, utilizando o ID passado na URL.
+  router.get('/post/:id', async (req, res) => { ... });
+
+  - Usa notion.pages.retrieve para buscar a página.
+  - Aplica mapNotionProperties para estruturar os dados.
+  - Retorna um JSON com os dados do post.
+
+Rota: GET /posts
+Busca todos os posts da base do Notion.
+  router.get('/posts', async (req, res) => { ... });
+
+  - Acessa o banco de dados da Notion definido por NOTION_DATABASE_ID.
+  - Ordena os resultados pela data (datePostBanner), do mais recente para o mais antigo.
+  - Mapeia todos os posts usando mapNotionProperties e retorna um array JSON.
+
+
+src
+├── Routes
+  ├── NotionRoutes.ts
+├──index.ts
+
+Index.ts
+  Este é o arquivo principal do backend, responsável por configurar e iniciar o servidor Express. Ele também define as rotas para integração com a Notion API e o envio de e-mails via Nodemailer.
+
+  Configurações iniciais
+  import express from 'express';
+  import cors from 'cors';
+  import dotenv from 'dotenv';
+  import nodemailer from 'nodemailer';
+  import { Client } from '@notionhq/client';
+
+  - Carrega variáveis de ambiente com dotenv.
+  - Ativa o CORS e o parsing de JSON.
+  - Instancia o cliente da Notion API com a chave do ambiente.
+
+
+  mapNotionProperties,  app.get('/api/notion/post/:id', async (req, res) => {...}) e app.get('/api/notion/posts', async (req, res) => {...})
+
+  Explicações em notionRoutes.ts
+
+Rota POST /send-email
+  app.post('/send-email', async (req, res) => { ... });
+  - Recebe os dados do formulário de contato: name, email e message.
+  - Usa Nodemailer para enviar um e-mail a partir do endereço configurado nas variáveis de ambiente:
+  - EMAIL_USER
+  - EMAIL_PASS
+  - Retorna um JSON indicando sucesso ou erro no envio.
+
+Inicialização do servidor
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});
+O servidor Express é iniciado na porta especificada no .env ou, por padrão, na 5000.
+
+
