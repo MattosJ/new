@@ -12,10 +12,10 @@ const Footer = () =>{
         </div>
         <ul className='redes-sociais-footer'>
 
-          <li><a href='https://www.facebook.com/interacriativa'><img className='redes-sociais-icones-footer' src={Facebook} alt='Facebook'/></a></li>
-          <li><a href=""><img className='redes-sociais-icones-footer' src={whatsapp} alt='Whatsapp'/></a></li>
-          <li><a href='https://www.youtube.com/@interacriativa846'><img className='redes-sociais-icones-footer' src={Youtube} alt='Youtube'/></a></li> 
-          <li><a href='https://www.instagram.com/interacriativa/'><img className='redes-sociais-icones-footer' src={Instagram} alt='Instagram'/></a></li> 
+          <li><a href='https://www.facebook.com/interacriativa' target='_blank'><img className='redes-sociais-icones-footer' src={Facebook} alt='Facebook'/></a></li>
+          <li><a href="https://wa.me/5579991196055" target='_blank'><img className='redes-sociais-icones-footer'  src={whatsapp} alt='Whatsapp' /></a></li>
+          <li><a href='https://www.youtube.com/@interacriativa846' target='_blank'><img className='redes-sociais-icones-footer' src={Youtube} alt='Youtube'/></a></li> 
+          <li><a href='https://www.instagram.com/interacriativa/' target='_blank'><img className='redes-sociais-icones-footer' src={Instagram} alt='Instagram'/></a></li> 
 
 
         </ul>

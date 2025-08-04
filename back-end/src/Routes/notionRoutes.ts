@@ -1,20 +1,44 @@
 import express from 'express';
-import cors from 'cors';
-import dotenv from 'dotenv';
-import nodemailer from 'nodemailer';
-import { Client } from '@notionhq/client'; 
+import { Client } from '@notionhq/client';
 
-dotenv.config();
+const router = express.Router();
 
-const app = express();
-app.use(cors());
-app.use(express.json());
-
-// Configuração do cliente Notion
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 
-// Função para mapear propriedades do Notion
-const mapNotionProperties = (page: any) => {
+// Interface para tipar o retorno
+export interface NotionPost {
+  id: string;
+  imagePostBanner: string;
+  author: string;
+  date: string;
+  title: string;
+  initText: string;
+  title1Notice: string;
+  descriptionTitle1Notice: string;
+  image1Notice: string;
+  textAfterImage1Notice: string;
+  listItem1Notice: string;
+  listItem2Notice: string;
+  listItem3Notice: string;
+  listItem4Notice: string;
+  subtitleNotice: string;
+  afterSubtitleText1Notice: string;
+  afterSubtitleText2Notice: string;
+  Title2Notice: string;
+  afterTitle2Text1Notice: string;
+  afterTitle2Text2Notice: string;
+  afterTitle2Text3Notice: string;
+  image2Notice: string;
+  imgLegend: string;
+  afterImage2Text1: string;
+  afterImage2Text2: string;
+  category : string;
+  highlight : string;
+  sequence : string;
+}
+
+// Função auxiliar para mapear propriedades
+const mapNotionProperties = (page: any): NotionPost => {
   const { properties } = page;
   
   const getText = (propertyName: string) => {
@@ -33,7 +57,7 @@ const mapNotionProperties = (page: any) => {
 
   return {
     id: page.id,
-    imagePostBanner1: getImage('imagePostBanner1'),
+    imagePostBanner: getImage('imagePostBanner'),
     author: getText('AuthorPostBanner'),
     date: getText('datePostBanner'),
     title: getText('titlePostBanner'),
@@ -57,14 +81,14 @@ const mapNotionProperties = (page: any) => {
     imgLegend: getText('imgLegend'),
     afterImage2Text1: getText('afterImage2Text1'),
     afterImage2Text2: getText('afterImage2Text2'),
-    category : getText('category'),
-    highlight : getText('highlight'),
+    category: getText('category'),
+    highlight: getText('highlight'),
     sequence : getText('sequence'),
   };
 };
 
 // Rota para buscar um post específico
-app.get('/api/notion/post/:id', async (req, res) => {
+router.get('/post/:id', async (req, res) => {
   try {
     const pageId = req.params.id;
     const page = await notion.pages.retrieve({ page_id: pageId });
@@ -77,7 +101,7 @@ app.get('/api/notion/post/:id', async (req, res) => {
 });
 
 // Rota para buscar todos os posts
-app.get('/api/notion/posts', async (req, res) => {
+router.get('/posts', async (req, res) => {
   try {
     const databaseId = process.env.NOTION_DATABASE_ID!;
     const response = await notion.databases.query({
@@ -92,37 +116,8 @@ app.get('/api/notion/posts', async (req, res) => {
     res.json(posts);
   } catch (error) {
     console.error('Erro ao buscar posts:', error);
-    res.status(500).json({ error: 'Falha ao carregar posts' });
-  }
-});
-// Envio de Email
-app.post('/send-email', async (req, res) => {
-  const { name, email, message } = req.body;
-
-  try {
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
-    await transporter.sendMail({
-      from: email,
-      to: process.env.EMAIL_USER,
-      subject: `Mensagem de ${name}`,
-      text: message +" " + email,
-    });
-
-    res.status(200).json({ success: true });
-  } catch (err) {
-    console.error('Erro ao enviar e-mail:', err);
-    res.status(500).json({ success: false, error: 'Erro ao enviar e-mail' });
+    res.status(500).json({ error: 'Falha ao carregar posts' as string });
   }
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
-});
+export default router;

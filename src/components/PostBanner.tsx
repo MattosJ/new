@@ -6,12 +6,13 @@ interface PostBannerProps {
   author : string;
   date : string;
   Image : string;
+  linkTo : string;
 }
-const PostBanner:React.FC<PostBannerProps> = ({linkText,title,author,date,Image}) =>{
+const PostBanner:React.FC<PostBannerProps> = ({linkText,title,author,date,Image,linkTo = "/blog"}) =>{
   return(
     <div className="postBanner-container">
       <div className="postBanner-content">
-        <Link to="/blog" className="postBanner-linkText">{linkText}</Link>
+        <Link to={linkTo} className="postBanner-linkText">{linkText}</Link>
         <h2 className="postBanner-title">{title}</h2>
         <h3 className="postBanner-author">{author}</h3>
         <p className="postBanner-date">{date}</p>

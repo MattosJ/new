@@ -1,20 +1,23 @@
+import { Link } from 'react-router-dom';
 interface PostCardProps{
-  Image : string;
+  id: string;
+  image : string;
   title: string;
 }
 
-const PostCard:React.FC<PostCardProps> = ({Image,title}) =>{
-  return(
-    <div className="post-card">
-      <div className="post-card-img">
-        <img src={Image}/>
+const PostCard: React.FC<PostCardProps> = ({ id, image, title }) => {
+  return (
+    <Link to={`/post/${id}`} className="post-card-link">
+      <div className="post-card">
+        <div className="post-card-img">
+          <img src={image} alt={title} />
+        </div>
+        <div className="post-card-title">
+          <h3>{title}</h3>
+        </div>
       </div>
-      <div className="post-card-title">
-        <h3>{title}</h3>
-      </div>
+    </Link>
+  );
+};
 
-    </div>
-  )
-}
-
-export default PostCard
+export default PostCard;

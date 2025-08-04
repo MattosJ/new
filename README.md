@@ -1,54 +1,68 @@
-# React + TypeScript + Vite
+# Sobre o Projeto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é um site institucional desenvolvido para a Intera, com as páginas **Blog** e **Projetos** alimentadas dinamicamente.
 
-Currently, two official plugins are available:
+O site é dividido em seções como:
+- Início
+- Quem Somos
+- Serviços
+- Projetos
+- Blog
+- Contato
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O projeto está sendo construído com **React + Vite** no frontend, **Node.js + Express** no backend, e integração com a **Notion API** como fonte de dados.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Instalação
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Pré-requisitos
+  Node.Js
+  npm
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Clonar o repositório
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+git clone https://github.com/MattosJ/new.git
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+
+### Entrando na pasta do projeto
+cd site_intera-em-producao-dev-novo
+
+### Back-End
+cd back-end
+npm install
+npm run dev
+
+### Front-end
+Na pasta geral do projeto
+npm install 
+npm run dev
+
+
+## Estrutura do Projeto
+
+site_intera-em-producao-dev-novo/
+├── back-end/ # Backend com Node.js e Express
+│ ├── node_modules/ # Dependências do backend
+│ ├── src/ # Código-fonte backend (rotas, controladores, serviços)
+│ ├── .env # Variáveis de ambiente do backend
+│ ├── package-lock.json # Lockfile npm backend
+│ ├── package.json # Configurações e scripts backend
+│ └── tsconfig.json # Configuração TypeScript backend
+├── dist/ # Build final do frontend
+├── node_modules/ # Dependências do frontend
+├── public/ # Arquivos públicos do frontend (ícones, imagens estáticas)
+├── src/ # Código-fonte frontend (React, componentes, páginas)
+├── .env # Variáveis de ambiente do frontend
+├── .gitattributes # Configurações Git
+├── .gitignore # Arquivos ignorados pelo Git
+├── eslint.config.js # Configuração ESLint
+├── index.html # HTML principal do frontend
+├── package-lock.json # Lockfile npm frontend
+├── package.json # Configurações e scripts frontend
+├── README.md # Documentação do projeto
+├── tsconfig.app.json # Configuração TypeScript frontend
+├── tsconfig.json # Configuração geral TypeScript
+├── tsconfig.node.json # Configuração TypeScript para Node.js
+└── vite.config.ts # Configuração do Vite
+
+

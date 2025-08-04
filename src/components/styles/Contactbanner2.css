@@ -1,0 +1,40 @@
+.blog-contact-banner{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid #cccccc;
+  padding: 1.5rem;
+  border-radius: 15px;
+  gap: 4rem;
+  align-items: center;
+  background-color: #FF0391;
+}
+.blog-contct-banner-img{
+  display: flex;
+  width: 100%;
+}
+.blog-contct-banner-img img{
+  width: 100%;
+}
+.blog-contact-banner-title{
+  color: #ffffff;
+  font-size: 1.3rem;
+}
+.blog-contact-banner-btn{
+  padding: 1.2rem;
+  background-color: #ffffff;
+  color: #00A1AE;
+  border-radius: 20px;
+  font-size: 1rem;
+}
+
+@media (max-width: 992px) {
+  .blog-contact-banner-btn{
+    padding: 0.7rem;
+    font-size: 0.75rem;
+  }
+  .blog-contact-banner-title{
+    font-size: 1rem;
+  }
+
+}

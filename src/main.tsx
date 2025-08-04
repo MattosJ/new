@@ -8,6 +8,7 @@ import NossosProjetos from './pages/NossosProjetos.tsx'
 import PorOndePassamos from './pages/PorOndePassamos.tsx'
 import Blog from './pages/Blog.tsx'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
+import NewsPost from './pages/NewPost.tsx'
 
 
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
     path:'/blog',
     element: <Blog/>,
   },
+  {
+   path: '/post/:id',
+   element : <NewsPost />
+  }
   
 ]);
 

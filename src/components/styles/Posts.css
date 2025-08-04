@@ -30,12 +30,12 @@
   gap: 2rem;
   padding: 2rem;
   align-items: start;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 .post-card{
   display: flex;
-  width: 30%;
+  width: 100%;
   flex-direction: column;
   gap: 1.5rem;
 }
@@ -74,6 +74,12 @@
   color: #000;
   font-size: 2.5rem;
 }
+.post-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  width: 30%;
+}
 
 @media (max-width: 992px) {
   .postsCards-container {
@@ -82,13 +88,15 @@
   }
 
   .post-card {
-    width: calc(50% - 1.5rem); 
+    width: 100%; 
   }
-
+  
   .post-card-img {
     width: 100%;
   }
-
+  .post-card-link {
+    width: 40%;
+  }
   .post-card-title {
     width: 100%;
   }
@@ -113,6 +121,9 @@
   }
 
   .post-card {
+    width: 100%;
+  }
+  .post-card-link {
     width: 100%;
   }
 

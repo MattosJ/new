@@ -5,7 +5,6 @@ import Alisson from "../assets/Alisson.png"
 import card4 from "../assets/8.png"
 import card5 from "../assets/9.png"
 import card6 from "../assets/10.png"
-{/*import { Link } from 'react-router-dom';*/}
 
 interface Slide {
   id: number;

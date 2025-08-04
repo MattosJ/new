@@ -7,8 +7,8 @@ import ContactBanner from "../components/ContactBanner";
 const Main = () => {
   return (
     <div className="main-container">
-      <BannerTextImage  title="Soluções criativas para transformar realidades"
-        subtitle="A Intera Criativa atua com pessoas, organizações e governos para cocriar projetos com propósito, impacto social e colaboração."
+      <BannerTextImage  title="Conecta, Cria e Transforma!"
+        subtitle="Aqui, construímos pontes para um mundo mais colaborativo, justo e criativo."
         style={{ backgroundImage: `url(${bannerImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}/>
       <CardGrid/>
       <ContactBanner id={1} forWho="" adtinionalInfo="" titleColor="#FFFFFF"/>
