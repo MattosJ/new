@@ -92,6 +92,14 @@
   border-radius: 15px;
   padding: 1rem;
   box-sizing: border-box;
+  box-shadow: 6px 5px 15px -8px rgba(0,0,0,0.25);
+  color: #000;
+  transition: ease-in-out 0.7s;
+}
+.blog-page-post-card:hover{
+  scale: 1.01;
+  border:  1px solid #0098a3dd;
+  color: #0098a3dd;
 }
 
 .blog-page-post-image-container {
@@ -103,7 +111,10 @@
 .blog-page-post-image-container img {
   width: 100%;
   object-fit: contain;
+  border-radius: 15px;
+  transition: ease-in-out 0.7s;
 }
+
 .blog-categories-title{
   font-size: 1.4rem;
 }
@@ -235,6 +246,7 @@
   .blog-categories-title{
     font-size: 1rem;
 }
+
 }
 @media (max-width: 468px) {
   .blog-posts-container {

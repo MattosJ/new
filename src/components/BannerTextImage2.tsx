@@ -17,7 +17,7 @@ const bannerTextImage2 : React.FC<BannerTextImage2Props> = ({image, title, title
         <h2 className="BTI2-title">{title} <span className="BTI2-title-highlight">{titleHighlight}</span></h2>
         <p className="BTI2-text-1">{text1}</p>
         <p className="BTI2-text-2">{text2}</p>
-        <p className="BTI2-text-3">{text3}.</p>
+        <p className="BTI2-text-3">{text3}</p>
       </div>
       <div className="BTI2-img">
         <img src={image} alt="Descrição da imagem"/>

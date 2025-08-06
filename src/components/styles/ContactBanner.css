@@ -4,9 +4,9 @@
   align-items: center;
   background-color: #0097A3; 
   padding: 60px 80px;
-  flex-wrap: wrap;
   gap: 40px;
   height: auto;
+  flex-direction: row;
 }
 
 .contact-banner-content {
@@ -52,9 +52,8 @@
   transition: background-color 0.3s ease;
 }
 
-
 .contact-button:hover {
-  background-color: #f0f0f0;
+  background-color: #deedf4;
 }
 
 .contact-banner-image img {
@@ -63,7 +62,7 @@
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .contact-banner {
     flex-direction: column !important;
     align-items: center;

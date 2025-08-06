@@ -8,7 +8,6 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
   list-style: none;
-  z-index: 10;
 }
 .footer h1{
   font-size: 1.1rem;
@@ -35,6 +34,11 @@
 }
 .redes-sociais-footer img{
   height: 24px;
+  width: auto;
+  object-fit: cover;
+}
+.redes-sociais-icones-footer-yt img{
+  height: 21px;
   width: auto;
   object-fit: cover;
 }
@@ -99,6 +103,10 @@
 
   .redes-sociais-footer img {
     height: 20px;
+  }
+
+  .redes-sociais-icones-footer-yt img{
+    height: 18px;
   }
 
   .footer h1 {

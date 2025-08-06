@@ -141,7 +141,7 @@ const Blog = () => {
           {/* LISTA DE POSTS */}
           <div className="blog-posts-list">
             {postsPaginados.map(post => (
-              <div key={post.id} className="blog-page-post-card">
+              <Link to={`/post/${post.id}`} key={post.id} className="blog-page-post-card">
                 {post.imagePostBanner1 && (
                   <div className="blog-page-post-image-container">
                     <img
@@ -157,10 +157,7 @@ const Blog = () => {
                 <h2 className="blog-page-post-title">{post.title}</h2>
                 <p className="blog-page-post-text">{post.author}</p>
                 <p className="blog-page-post-text-2">{post.date}</p>
-                <Link to={`/post/${post.id}`} className="blog-page-post-link-btn">
-                  Ler mais
-                </Link>
-              </div>
+              </Link>
             ))}
 
             {/* PAGINAÇÃO */}

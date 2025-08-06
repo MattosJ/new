@@ -107,7 +107,7 @@
 .card-link {
   display: flex;
   padding: 0.5rem 1rem;
-  background-color: #4A2617;
+  background-color: #0097A3;
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -119,7 +119,7 @@
 }
 
 .card-link:hover {
-  background-color: #814226;
+  background-color: #02828b;
 }
 
 @keyframes fadeIn {

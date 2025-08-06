@@ -8,6 +8,8 @@ import BannerTextImage2 from "../components/BannerTextImage2";
 import ProjectsCard from "../components/ProjetctsCards";
 import { useEffect, useState } from "react";
 import { fetchAllPosts, NotionPost } from "../services/notion";
+import ObjectMDecoretionM2 from "../components/ObjectDecoretionM2"
+import ObjectPDecoretion from "../components/ObjectPDecoretion"
 
 const NossosProjetos = () =>{
     const [projetos, setProjetos] = useState<NotionPost[]>([]);
@@ -25,7 +27,9 @@ const NossosProjetos = () =>{
       fetchProjetos();
     }, []);
   return(
-        <div>
+    <>
+    
+        <div style={{position:"relative", overflow:'hidden'}}>
       <HeaderInternal/>
         <div className="Content-quemsomos">
          {projetos.length > 0 ? (
@@ -44,8 +48,12 @@ const NossosProjetos = () =>{
           <ProjectsCard/>
           <ContactBanner id={1} forWho="" adtinionalInfo="" titleColor="#FFFFFF"/>
         </div>
-      <Footer/>
+         <ObjectMDecoretionM2 style={{position:'absolute', bottom:"-60px", right:"50%" }}/>
+        <ObjectPDecoretion style={{position : 'absolute', bottom:'-60px' , right:'48%', backgroundColor : '#FEC820'}} />
+     
     </div>
+     <Footer/>
+    </>
   )
 }
 

@@ -46,3 +46,9 @@
   transform: rotate(140deg);
   transform-origin: center;
 }
+
+@media (max-width: 1200px) {
+  .decoretionM{
+    display: none;
+}
+}
