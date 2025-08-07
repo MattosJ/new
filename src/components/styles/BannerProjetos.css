@@ -1,0 +1,76 @@
+.BannerProjetos-wrapper{
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  background-color: #D9D9D9;
+  align-items: center;
+}
+.BannerProjetos-content{
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  align-items: flex-start;
+  width: 70%;
+  padding: 1rem ;
+}
+.BannerProjetos-img{
+  display: flex;
+  width: 31%;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.BannerProjetos-img img{
+  width: 100%;
+  object-fit: contain;
+}
+.BannerProjetos-title{
+  font-size: 4rem;
+  font-weight: 400;
+}
+.BannerProjetos-highlight{
+  font-weight: bold;
+  color: #0097A3;
+}
+
+@media screen and (max-width: 1024px) {
+  .BannerProjetos-wrapper {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .BannerProjetos-content,
+  .BannerProjetos-img {
+    width: 100%;
+  }
+
+  .BannerProjetos-img {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .BannerProjetos-title {
+    font-size: 3rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .BannerProjetos-content {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .BannerProjetos-title {
+    font-size: 2.2rem;
+  }
+
+  .BannerProjetos-content {
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+
+  .BannerProjetos-wrapper {
+    padding: 1rem;
+  }
+}

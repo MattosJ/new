@@ -7,6 +7,7 @@ import "../components/styles/blog.css";
 import PostBanner from "../components/PostBanner";
 import ContactBanner2 from "../components/ContactBanner2";
 import imageBanner from "../assets/bannerImage2.png";
+import TopHeader from "../components/TopHeader";
 
 const Blog = () => {
   const [posts, setPosts] = useState<NotionPost[]>([]);
@@ -72,6 +73,7 @@ const Blog = () => {
 
   return (
     <>
+      <TopHeader/>
       <Header />
       <div className="Content">
         {mostRecentPost && !categoriaSelecionada && (

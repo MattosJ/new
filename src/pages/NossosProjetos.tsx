@@ -4,12 +4,13 @@ import '../components/styles/Pages.css'
 import '../components/styles/Pages.css'
 import '../components/styles/QuemSomos.css'
 import ContactBanner from "../components/ContactBanner";
-import BannerTextImage2 from "../components/BannerTextImage2";
 import ProjectsCard from "../components/ProjetctsCards";
 import { useEffect, useState } from "react";
 import { fetchAllPosts, NotionPost } from "../services/notion";
 import ObjectMDecoretionM2 from "../components/ObjectDecoretionM2"
 import ObjectPDecoretion from "../components/ObjectPDecoretion"
+import TopHeader from "../components/TopHeader"
+import BannerProjetos from "../components/BannerProjets"
 
 const NossosProjetos = () =>{
     const [projetos, setProjetos] = useState<NotionPost[]>([]);
@@ -30,17 +31,21 @@ const NossosProjetos = () =>{
     <>
     
         <div style={{position:"relative", overflow:'hidden'}}>
+      <TopHeader/>
       <HeaderInternal/>
         <div className="Content-quemsomos">
          {projetos.length > 0 ? (
-  <BannerTextImage2
-    image={projetos[0].imagePostBanner1}
-    title={projetos[0].title}
-    titleHighlight={projetos[0].author}
-    text1={projetos[0].afterTitle2Text1Notice}
-    text2={projetos[0].afterTitle2Text2Notice}
-    text3={projetos[0].afterTitle2Text3Notice}
+
+  <BannerProjetos title= {projetos[0].title} 
+          image= {projetos[0].imagePostBanner1}
+          highlight= {projetos[0].author}
+          text1= {projetos[0].afterTitle2Text1Notice}
+          text2= {projetos[0].afterTitle2Text2Notice}
+          text3= {projetos[0].afterTitle2Text3Notice}
+          imageAlt={projetos[0].imagePostBanner1} 
+          
   />
+
 ) : (
   <p>Carregando banner...</p>
 )}

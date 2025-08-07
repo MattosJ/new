@@ -1,11 +1,30 @@
 import CardService from "../components/CardService";
 import "../components/styles/CardsContainer.css";
 import card1 from '../assets/top.png'
+import { useEffect, useState } from "react";
+import { fetchAllPosts, NotionPost } from "../services/notion";
+
 const CardsContainer = () => {
+
+    const [projetos, setProjetos] = useState<NotionPost[]>([]);
+  
+    useEffect(() => {
+      const fetchProjetos = async () => {
+        const allPosts = await fetchAllPosts();
+        const projetosFiltrados = allPosts.filter(
+          post => post.category?.trim().toLowerCase() === "projeto"
+        );
+  
+        setProjetos(projetosFiltrados);
+      };
+  
+      fetchProjetos();
+    }, []);
+
   return (
     <div className="CardsContainer">
       <h2 className="CardsContainer-title">
-        Conheça Nossas principais frentes de atuação
+        Nossos Projetos
       </h2>
 
       <CardService
@@ -45,7 +64,7 @@ const CardsContainer = () => {
         buttonText="Da ideia à ação: veja os projetos"
         themeColor="#FEC820"
       />
-
+   
 
     </div>
   );

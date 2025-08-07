@@ -5,6 +5,7 @@ import '../components/styles/Pages.css'
 import '../components/styles/Servicos.css'
 import bannerImg from "../assets/banner-ti.png"
 import ContactBanner from "../components/ContactBanner"
+import TopHeader from "../components/TopHeader"
 
 
 
@@ -12,6 +13,7 @@ const servicos = () =>{
   return(
     <>
     <div>
+      <TopHeader/>
       <HeaderInternal/>
       <div className="Content-service">
         <BannerTextImage  title="Soluções criativas para transformar realidades"
