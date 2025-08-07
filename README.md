@@ -152,3 +152,53 @@ src
   - REACT_APP_API_URL == URL base do back-end
   - NOTION_API_KEY == chave da API notion 
   - NOTION_DATABASE_ID == Id da base de dados notion
+
+### Front-End
+O front está na pasta geral do site.
+  duas pastas principais podem ser vistas:
+    - public : temos o ícone , o modo de acesso de bot para indexar o site e o redirects.
+      - intera.ico
+      -robots.txt
+      - _redirects
+    - src : A principal pasta do front é nela que temos as pastas [assets, components,styles, pages,services]
+      - assets : onde estão as imagens, icones e vetores que são adicionados ao site de forma não dinamica.
+      - components : onde se localizam os componentes do site.
+      - styles : A pasta styles fica dentro da pasta components e ela é responsável pela maioria dos estilos do site.
+      - pages : Localiza as páginas do site.
+      - services : Onde fica a conexão para receber as informações do back-end.
+
+  #### components:
+    - BannerTextImage.tsx
+    - BannerTextImage2.tsx
+    - CardGrid.tsx
+    - CardGridService.tsx
+    - CardsContainer.tsx
+    - CardService.tsx
+    - CardTriple.tsx
+    - ContactBanner.tsx
+    - ContactBanner2.tsx
+    - ContactCard.tsx
+    - Footer.tsx
+    - Header.tsx
+    - ImageSlider.tsx
+    - Main.tsx
+    - MenuPost.tsx
+    - ObjectDecoretionM2.tsx
+    - ObjectMDecoretion.tsx
+    - ObjetctPDecoretion.tsx
+    - PostBanner.tsx
+    - PostBodyNotice.tsx
+    - PostCard.tsx
+    - PostContainer.tsx
+    - PostSideMenu.tsx
+    - PresentationCard.tsx
+    - ProjectsCards.tsx
+    - PubliBanner.tsx
+    - ShareMenu.tsx
+    - SlideShow.tsx
+    - TopHeader.tsx
+
+  #### Detalhes dos components:
+    - BannerTextImage.tsx : Onde está sendo utilizado: 
+
+

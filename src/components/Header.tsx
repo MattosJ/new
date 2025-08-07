@@ -30,9 +30,9 @@ const Header: React.FC = () => {
   return (
     <header className="header">
       <nav className="nav" ref={navRef}>
-        <div className="logo">
+        <Link to="/" className="logo">
           <img src={Logo} alt="Logo" />
-        </div>
+        </Link>
         <button className="hamburger" ref={hamburgerRef} aria-label="Menu" />
         <ul className="nav-list">
           <li><Link to="/">Ínicio</Link></li>

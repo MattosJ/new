@@ -50,7 +50,7 @@
   display: none;
   border: none;
   background: none;
-  border-top: 3px solid black;
+  border-top: 3px solid #0097A3;
   cursor: pointer;
 }
 .hamburger::before,.hamburger::after{
@@ -58,7 +58,7 @@
   display: block;
   width: 30px;
   height: 3px;
-  background-color: black;
+  background-color: #0097A3;
   margin-top: 5px;
   position: relative;
   transition: 0.3s;
@@ -133,4 +133,5 @@
   .logo{
     height: 60%;
   }
+
 }
