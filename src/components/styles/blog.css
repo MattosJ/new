@@ -106,6 +106,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
+  max-height: 275px;
 }
 
 .blog-page-post-image-container img {
@@ -136,9 +137,11 @@
 .card-post-highlight-img{
   display: flex;
   width: 60%;
+  max-height: 100px ;
 }
 .card-post-highlight-img img{
   width: 100%;
+  object-fit: contain;
 }
 .container-card-post-highlight{
   display: flex;

@@ -60,6 +60,13 @@ const mapNotionProperties = (page: any) => {
     category : getText('category'),
     highlight : getText('highlight'),
     sequence : getText('sequence'),
+    forWho : getText('forWho'),
+    btnProjetcts : getText('btnProjetcts'),
+    colorCard : getText('colorCard'),
+    descriptionCard : getText('descriptionCard'),
+    titleCard : getText('titleCard'),
+    subtitleCard : getText('subtitleCard'),
+    imageCard : getImage('imageCard'),
   };
 };
 

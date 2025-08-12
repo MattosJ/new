@@ -4,13 +4,14 @@ import '../components/styles/Pages.css'
 import '../components/styles/Pages.css'
 import '../components/styles/QuemSomos.css'
 import ContactBanner from "../components/ContactBanner";
-import ProjectsCard from "../components/ProjetctsCards";
 import { useEffect, useState } from "react";
 import { fetchAllPosts, NotionPost } from "../services/notion";
 import ObjectMDecoretionM2 from "../components/ObjectDecoretionM2"
 import ObjectPDecoretion from "../components/ObjectPDecoretion"
 import TopHeader from "../components/TopHeader"
 import BannerProjetos from "../components/BannerProjets"
+import CardsContainer from "../components/CardsContainer"
+
 
 const NossosProjetos = () =>{
     const [projetos, setProjetos] = useState<NotionPost[]>([]);
@@ -50,12 +51,12 @@ const NossosProjetos = () =>{
   <p>Carregando banner...</p>
 )}
   
-          <ProjectsCard/>
+         <CardsContainer/>
           <ContactBanner id={1} forWho="" adtinionalInfo="" titleColor="#FFFFFF"/>
         </div>
          <ObjectMDecoretionM2 style={{position:'absolute', bottom:"-60px", right:"50%" }}/>
         <ObjectPDecoretion style={{position : 'absolute', bottom:'-60px' , right:'48%', backgroundColor : '#FEC820'}} />
-     
+        
     </div>
      <Footer/>
     </>

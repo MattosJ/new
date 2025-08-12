@@ -9,6 +9,8 @@ import PorOndePassamos from './pages/PorOndePassamos.tsx'
 import Blog from './pages/Blog.tsx'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import NewsPost from './pages/NewPost.tsx'
+import Projetos from './pages/Projetos.tsx'
+import NewsPostProjects from './pages/NewPostProjects.tsx'
 
 
 const router = createBrowserRouter([
@@ -39,6 +41,14 @@ const router = createBrowserRouter([
   {
     path:'/blog',
     element: <Blog/>,
+  },
+  {
+    path:'/projetos',
+    element : <Projetos/>,
+  },
+    {
+    path:'/post-projects/:id',
+    element : <NewsPostProjects/>,
   },
   {
    path: '/post/:id',

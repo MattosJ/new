@@ -8,6 +8,11 @@
 .Content-quemsomos{
     background-color: #f7f7f75e !important;
 }
+.quemSomos{
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
 .page-title{
     text-align: center;
     padding: 1.2rem 1rem;

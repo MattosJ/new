@@ -35,9 +35,12 @@
 .postBanner-img{
   display: flex;
   width: 50%;
+  height: auto;
+  max-height: 450px;
 }
 .postBanner-img img{
   width: 100%;
+  object-fit: contain;
 }
 
 @media (max-width: 768px) {

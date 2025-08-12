@@ -3,11 +3,12 @@ interface PostCardProps{
   id: string;
   image : string;
   title: string;
+  link : string;
 }
 
-const PostCard: React.FC<PostCardProps> = ({ id, image, title }) => {
+const PostCard: React.FC<PostCardProps> = ({ id, image, title , link }) => {
   return (
-    <Link to={`/post/${id}`} className="post-card-link">
+    <Link to={`/post${link}/${id}`} className="post-card-link">
       <div className="post-card">
         <div className="post-card-img">
           <img src={image} alt={title} />

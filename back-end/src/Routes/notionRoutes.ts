@@ -35,6 +35,13 @@ export interface NotionPost {
   category : string;
   highlight : string;
   sequence : string;
+  forWho : string;
+  btnProjetcts : string;
+  colorCard : string;
+  descriptionCard : string;
+  titleCard : string;
+  subtitleCard : string;
+  imageCard : string;
 }
 
 // Função auxiliar para mapear propriedades
@@ -84,6 +91,13 @@ const mapNotionProperties = (page: any): NotionPost => {
     category: getText('category'),
     highlight: getText('highlight'),
     sequence : getText('sequence'),
+    forWho : getText('forWho'),
+    btnProjetcts : getText('btnProjetcts'),
+    colorCard : getText('colorCard'),
+    descriptionCard : getText('descriptionCard'),
+    titleCard : getText('titleCard'),
+    subtitleCard : getText('subtitleCard'),
+    imageCard : getImage('imageCard'),
   };
 };
 

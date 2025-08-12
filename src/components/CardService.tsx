@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 type CardServiceProps = {
+  id: string; 
   image?: string;
   title: string;
   subtitle?: string;
@@ -14,6 +16,7 @@ type CardServiceProps = {
 };
 
 const CardService: React.FC<CardServiceProps> = ({
+  id,
   image,
   title,
   subtitle,
@@ -26,7 +29,8 @@ const CardService: React.FC<CardServiceProps> = ({
   themeColor = "#00a7e1",
 }) => {
   return (
-    <div
+    <Link
+      to={`/post-projects/${id}`} //  link para o post
       className={`CardService-Card ${className}`}
       style={{ borderColor: themeColor, ...style }}
     >
@@ -45,15 +49,17 @@ const CardService: React.FC<CardServiceProps> = ({
           <h4 className="CardService-subtitle-card">{subtitle}</h4>
         )}
         {description && <p className="CardService-text">{description}</p>}
-        {audience && (
-          <h4 className="CardService-subtitle-card-FH">{audience}</h4>
-        )}
+
+        <h4 className="CardService-subtitle-card-FH">Para Quem:</h4>
+        {audience && <p>{audience}</p>}
       </div>
 
       {buttonText && (
         <div className="CardService-btn">
           <button
-            onClick={onButtonClick}
+            onClick={() => {
+              onButtonClick?.();
+            }}
             className="CardService-button"
             style={{ backgroundColor: themeColor }}
           >
@@ -61,7 +67,7 @@ const CardService: React.FC<CardServiceProps> = ({
           </button>
         </div>
       )}
-    </div>
+    </Link>
   );
 };
 

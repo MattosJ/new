@@ -28,6 +28,13 @@ export interface NotionPost {
   category : string;
   highlight : string,
   sequence: string,
+  forWho : string;
+  btnProjetcts : string;
+  colorCard : string;
+  descriptionCard : string;
+  titleCard : string;
+  subtitleCard : string;
+  imageCard : string;
 }
 
 // URL base do backend - ajuste para sua configuração

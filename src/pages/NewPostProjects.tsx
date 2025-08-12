@@ -7,7 +7,7 @@ import PostContainer from "../components/PostContainer";
 import '../components/styles/Pages.css';
 import { fetchNewsPost, fetchAllPosts, NotionPost } from "../services/notion"; 
 
-const NewsPost = () => {
+const NewsPostProjects = () => {
   const { id } = useParams<{ id: string }>();
   const [postData, setPostData] = useState<NotionPost | null>(null);
   const [loading, setLoading] = useState(true);
@@ -34,18 +34,23 @@ const NewsPost = () => {
   }, [id]);
 
   // Carregar posts recentes
-  useEffect(() => {
-    const loadRecentPosts = async () => {
-      try {
-        const allPosts = await fetchAllPosts();
-        setRecentPosts(allPosts.slice(0, 3)); 
-      } catch (err) {
-        console.error("Erro ao buscar posts recentes:", err);
-      }
-    };
+useEffect(() => {
+  const loadRecentPosts = async () => {
+    try {
+      const allPosts = await fetchAllPosts();
 
-    loadRecentPosts();
-  }, []);
+      const onlyProjects = allPosts.filter(
+        post => post.category?.toLowerCase() === "projeto"
+      );
+
+      setRecentPosts(onlyProjects.slice(0, 3)); 
+    } catch (err) {
+      console.error("Erro ao buscar posts recentes:", err);
+    }
+  };
+
+  loadRecentPosts();
+}, []);
 
   if (loading) return <div className="loading">Carregando...</div>;
   if (error) return <div>{error}</div>;
@@ -57,8 +62,8 @@ const NewsPost = () => {
       <div className="Content">
         <PostBanner
           Image={postData.imagePostBanner1}
-          linkText="<Voltar para o blog"
-          linkTo="/blog"
+          linkText="<Voltar a páginas de projetos"
+          linkTo="/projetos"
           author={postData.author}
           date={postData.date}
           title={postData.title}
@@ -88,12 +93,12 @@ const NewsPost = () => {
             afterImage2Text2: postData.afterImage2Text2,
           }}
           postsRecentesTitle="Posts Recentes"
-          postsRecentesLink="/blog"
+          postsRecentesLink="/projetos"
           postCards={recentPosts.map(post => ({
             id: post.id, 
             image: post.imagePostBanner1,
             title: post.title,
-            link: ``
+            link: `-projects`
           }))}
         />
       </div>
@@ -102,4 +107,4 @@ const NewsPost = () => {
   );
 };
 
-export default NewsPost;
+export default NewsPostProjects;

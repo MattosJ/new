@@ -7,6 +7,7 @@ interface PostCardData {
   id: string;
   image: string;
   title: string;
+  link : string;
 }
 
 interface PostContainerProps {
@@ -32,7 +33,7 @@ const PostContainer: React.FC<PostContainerProps> = ({
 
       <div className='postsCards-container'>
         {postCards.map((card ) => (
-          <PostCard key={card.id} id={card.id} image={card.image} title={card.title} />
+          <PostCard key={card.id} id={card.id} image={card.image} title={card.title}  link={card.link}/>
         ))}
       </div>
     </div>
