@@ -42,6 +42,7 @@ export interface NotionPost {
   titleCard : string;
   subtitleCard : string;
   imageCard : string;
+  subCategoryForProjects : string;
 }
 
 // Função auxiliar para mapear propriedades
@@ -98,6 +99,7 @@ const mapNotionProperties = (page: any): NotionPost => {
     titleCard : getText('titleCard'),
     subtitleCard : getText('subtitleCard'),
     imageCard : getImage('imageCard'),
+    subCategoryForProjects : getText('subCategoryForProjects'),
   };
 };
 

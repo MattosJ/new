@@ -1,14 +1,3 @@
-.blog-page-posts-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  width: 100%;
-  gap: 2rem;
-  justify-content: flex-start;
-  padding: 2.5rem;
-  align-items: flex-start;
-  box-sizing: border-box;
-}
 .blog-posts-container{
   display: flex;
   flex-direction: row-reverse;

@@ -35,6 +35,7 @@ export interface NotionPost {
   titleCard : string;
   subtitleCard : string;
   imageCard : string;
+  subCategoryForProjects : string;
 }
 
 // URL base do backend - ajuste para sua configuração

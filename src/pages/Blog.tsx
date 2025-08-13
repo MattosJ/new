@@ -40,7 +40,8 @@ const Blog = () => {
             .map(post => post.category?.trim().toLowerCase())
             .filter(Boolean)
             .filter(cat => cat !== "projeto")
-            .filter(cat => cat !== "banner") // exclui a categoria "projeto" e "banner"
+            .filter(cat => cat !== "banner")
+            .filter(cat => cat !== "quemsomos") // exclui a categoria "projeto" ,"banner" , "quemsomos"
         )
       );
 
@@ -56,7 +57,7 @@ const Blog = () => {
 
   const postsFiltrados = categoriaSelecionada
     ? posts.filter(post => post.category?.trim().toLowerCase() === categoriaSelecionada)
-    : posts.filter(post => post.category?.trim().toLowerCase() !== "projeto" && post.category?.trim().toLowerCase() !== "banner") ; 
+    : posts.filter(post => post.category?.trim().toLowerCase() !== "projeto" && post.category?.trim().toLowerCase() !== "banner" && post.category?.trim().toLowerCase() !== "quemsomos" ) ; 
 
   const totalPaginas = Math.ceil(postsFiltrados.length / postsPorPagina);
   const indiceInicial = (paginaAtual - 1) * postsPorPagina;

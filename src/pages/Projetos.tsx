@@ -5,16 +5,15 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../components/styles/blog.css";
 import PostBanner from "../components/PostBanner";
-import ContactBanner2 from "../components/ContactBanner2";
-import imageBanner from "../assets/bannerImage2.png";
 import TopHeader from "../components/TopHeader";
+import "../components/styles/projetcts.css";
 
 const Projetos = () => {
   const [posts, setPosts] = useState<NotionPost[]>([]);
   const [paginaAtual, setPaginaAtual] = useState(1);
+  const [subCategoriaSelecionada, setSubCategoriaSelecionada] = useState<string>("todas");
   const postsPorPagina = 6;
 
-  // Função para capitalizar
   const capitalize = (str: string) =>
     str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 
@@ -22,7 +21,6 @@ const Projetos = () => {
     const loadPosts = async () => {
       const data = await fetchAllPosts();
 
-      // Filtra apenas posts da categoria "projeto"
       const postsProjeto = data
         .filter(post => post.category?.trim().toLowerCase() === "projeto")
         .sort((a, b) => {
@@ -37,19 +35,31 @@ const Projetos = () => {
     loadPosts();
   }, []);
 
-  // Post mais recente
   const mostRecentPost = posts.length > 0 ? posts[0] : null;
 
-  // Posts destacados
-  const postsDestacados = posts.filter(
-    post => post.highlight?.toLowerCase().trim() === "sim"
-  );
+  const subCategorias = [
+    "todas",
+    ...Array.from(
+      new Set(
+        posts
+          .map(post => post.subCategoryForProjects?.trim().toLowerCase())
+          .filter(Boolean)
+      )
+    )
+  ];
 
-  // Paginação
-  const totalPaginas = Math.ceil(posts.length / postsPorPagina);
+  const postsFiltrados =
+    subCategoriaSelecionada === "todas"
+      ? posts
+      : posts.filter(
+          post =>
+            post.subCategoryForProjects?.trim().toLowerCase() === subCategoriaSelecionada
+        );
+
+  const totalPaginas = Math.ceil(postsFiltrados.length / postsPorPagina);
   const indiceInicial = (paginaAtual - 1) * postsPorPagina;
   const indiceFinal = indiceInicial + postsPorPagina;
-  const postsPaginados = posts.slice(indiceInicial, indiceFinal);
+  const postsPaginados = postsFiltrados.slice(indiceInicial, indiceFinal);
 
   return (
     <>
@@ -67,37 +77,38 @@ const Projetos = () => {
           />
         )}
 
-        <div className="blog-posts-container">
-          <div className="blog-lateral-content">
-            <div className="container-card-post-highlight">
-              <h3 className="card-post-highlight-title1">Projetos em Execução</h3>
-              {postsDestacados.map(post => (
-                <Link to={`/post-projects/${post.id}`} key={post.id} className="card-post-highlight">
-                  {post.imagePostBanner1 && (
-                    <div className="card-post-highlight-img">
-                      <img src={post.imagePostBanner1} alt={post.title} />
-                    </div>
-                  )}
-                  <h2 className="card-post-highlight-title">{post.title}</h2>
-                </Link>
-              ))}
-            </div>
+        {/* Menu de subcategorias */}
+        <div className="subcategories-menu">
+          {subCategorias.map((sub, idx) => (
+            <button
+              key={idx}
+              className={`subcategory-button ${
+                subCategoriaSelecionada === sub ? "active" : ""
+              }`}
+              onClick={() => {
+                setSubCategoriaSelecionada(sub);
+                setPaginaAtual(1);
+              }}
+            >
+              {capitalize(sub)}
+            </button>
+          ))}
+        </div>
 
-            <ContactBanner2
-              LinkTo="/fale-conosco"
-              TitleBanner="Banner Para divulgar"
-              buttonText="Quero Conversar com a Intera"
-              image={imageBanner}
-              imageAlt="Banner Para divulgar"
-            />
-          </div>
-
-          {/* Lista de posts */}
-          <div className="blog-posts-list">
+        <div className="projects-posts-container">
+          <div className="projects-posts-list">
             {postsPaginados.map(post => (
-              <Link to={`/post-projects/${post.id}`} key={post.id} className="blog-page-post-card">
+              <Link
+                to={`/post-projects/${post.id}`}
+                key={post.id}
+                className="projects-page-post-card"
+                style={{
+                  // Variável CSS para a borda no hover
+                  "--hover-border-color": post.colorCard || "#000"
+                } as React.CSSProperties}
+              >
                 {post.imagePostBanner1 && (
-                  <div className="blog-page-post-image-container">
+                  <div className="project-page-post-image-container">
                     <img
                       src={post.imagePostBanner1}
                       alt={post.title}
@@ -105,14 +116,18 @@ const Projetos = () => {
                     />
                   </div>
                 )}
-                <p className="blog-page-post-category">{capitalize(post.category || "")}</p>
+                <p
+                  className="blog-page-post-category"
+                  style={{ color: post.colorCard }}
+                >
+                  {capitalize(post.subCategoryForProjects || "")}
+                </p>
                 <h2 className="blog-page-post-title">{post.title}</h2>
                 <p className="blog-page-post-text">{post.author}</p>
                 <p className="blog-page-post-text-2">{post.date}</p>
               </Link>
             ))}
 
-            {/* Paginação */}
             {totalPaginas > 1 && (
               <div className="blog-pagination">
                 {Array.from({ length: totalPaginas }, (_, i) => (

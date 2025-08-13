@@ -67,6 +67,7 @@ const mapNotionProperties = (page: any) => {
     titleCard : getText('titleCard'),
     subtitleCard : getText('subtitleCard'),
     imageCard : getImage('imageCard'),
+    subCategoryForProjects : getText('subCategoryForProjects'),
   };
 };
 
