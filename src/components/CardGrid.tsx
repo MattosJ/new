@@ -42,6 +42,9 @@ const CardGrid = () => {
   ];
 
   return (
+    /* Exemplo de uso
+      <CardGrid/>
+    */
     <>
     <div className='card-grid-wrapper'>
         <h2 className='card-grid-major-title'>Conheça Nosso Trabalho</h2>

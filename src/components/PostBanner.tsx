@@ -10,6 +10,17 @@ interface PostBannerProps {
 }
 const PostBanner:React.FC<PostBannerProps> = ({linkText,title,author,date,Image,linkTo = "/blog"}) =>{
   return(
+    /* Exemplo de uso
+       <PostBanner
+            Image={mostRecentPost.imagePostBanner1}
+            linkText="Ver notícia completa"
+            author={mostRecentPost.author}
+            date={mostRecentPost.date}
+            title={mostRecentPost.title}
+            linkTo={`/post/${mostRecentPost.id}`}
+          />
+    */
+
     <div className="postBanner-container">
       <div className="postBanner-content">
         <Link to={linkTo} className="postBanner-linkText">{linkText}</Link>

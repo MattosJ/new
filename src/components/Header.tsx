@@ -28,6 +28,10 @@ const Header: React.FC = () => {
   }, []);
 
   return (
+    /* Exemplo de uso 
+      <Header />
+    */
+
     <header className="header">
       <nav className="nav" ref={navRef}>
         <Link to="/" className="logo">

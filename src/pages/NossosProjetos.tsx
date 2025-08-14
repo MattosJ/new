@@ -43,7 +43,7 @@ const NossosProjetos = () =>{
           text1= {projetos[0].afterTitle2Text1Notice}
           text2= {projetos[0].afterTitle2Text2Notice}
           text3= {projetos[0].afterTitle2Text3Notice}
-          imageAlt={projetos[0].imagePostBanner1} 
+          imageAlt={projetos[0].title} 
           
   />
 

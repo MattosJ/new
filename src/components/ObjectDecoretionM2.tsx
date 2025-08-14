@@ -8,6 +8,10 @@ interface ObjectMDecoretionProps {
 
 const ObjectMDecoretionM2: React.FC<ObjectMDecoretionProps> = ({ style }) => {
   return (
+    /* Exemplos de uso 
+       <ObjectMDecoretionM2 style={{position:'absolute', bottom:"-60px", right:"50%" }}/>
+    */
+
     <img
       src={svgDecoretions2}
       className="decoretionM"

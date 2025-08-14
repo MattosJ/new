@@ -168,19 +168,19 @@ O front está na pasta geral do site.
       - services : Onde fica a conexão para receber as informações do back-end.
 
   #### components:
+    - BannerProjets.tsx
     - BannerTextImage.tsx
-    - BannerTextImage2.tsx
+    - BannerWho.tsx
     - CardGrid.tsx
-    - CardGridService.tsx
+    - CardProjects.tsx
     - CardsContainer.tsx
+    - CardsContainerProjects.tsx
     - CardService.tsx
-    - CardTriple.tsx
     - ContactBanner.tsx
     - ContactBanner2.tsx
     - ContactCard.tsx
     - Footer.tsx
     - Header.tsx
-    - ImageSlider.tsx
     - Main.tsx
     - MenuPost.tsx
     - ObjectDecoretionM2.tsx
@@ -190,15 +190,109 @@ O front está na pasta geral do site.
     - PostBodyNotice.tsx
     - PostCard.tsx
     - PostContainer.tsx
-    - PostSideMenu.tsx
-    - PresentationCard.tsx
-    - ProjectsCards.tsx
-    - PubliBanner.tsx
     - ShareMenu.tsx
-    - SlideShow.tsx
     - TopHeader.tsx
 
   #### Detalhes dos components:
-    - BannerTextImage.tsx : Onde está sendo utilizado: 
+    - BannerProjets.tsx
+      - Um banner para a página projetos -> Recebe título Texto para ser destacado,  textos, imagens e texto alternativo para a imagem. Exemplo de uso no código. 
+
+    - BannerTextImage.tsx
+      - Um banner que Tem título e subtítulo e sua imagem é implementada através de um background no bloco feito de uma forma que seja possível um visual em que o texto e a imagem fiquem sobreposto se preciso. Exemplo de uso no código.
+
+    - BannerWho.tsx
+      - Um banner para a página Quem somos -> Recebe título Texto para ser destacado,  textos, imagens e texto alternativo para a imagem. Exemplo de uso no código. 
+    
+    - CardGrid.tsx
+      - Adiciona cards que são definidos no próprio componente, esses cards tem algumas variáveis/propriedades [id,title,description,image,link,imageAlt], que serão utilizados para a construçã do conteúdo dentro do card.
+    
+    - CardProjects.tsx 
+      - Um card com alguma propriedade [image,title,subtitle,description,audience,buttonText,onButtonClick,style,className,themeColor]
+      className - caso quiser adicionar uma classe css a mais a que já tem no próprio card. themeColor -> define a cor tema do card e o style para definir estilos adicionais. alguns valores tem padrão definido caso não especificados, verificar no compoenente.
+
+    - CardsContainer.tsx
+      - O container que vai chamar o CardService para ser adicionado dinâmicamente os posts de projetos que estão destacados.
+          - post.category?.trim().toLowerCase() === "projeto" &&
+          - post.highlight?.trim().toLowerCase() === "sim"
+
+    - CardsContainerProjects.tsx
+      - O container que vai chamar o CardProjects para exibir os cards todos os cards da categoria quemsomos dinamicamente. 
+      - post.category?.trim().toLowerCase() === "quemsomos"
+    
+    - CardsService.tsx
+      - Muito semelhante ao CardProjects.tsx. Porém tem algo que o diferencia completamnete
+       -  to={`/post-projects/${id}`}
+       caso seja removido a linkagem se torna incorreta.
+  
+    - ContactBanner.tsx
+      - Banner para contato que tem diversar propriedades [id,backgroundColor,title,highlightText,subtitle,buttonText,adtinionalInfo,forWho,titleColor,subtitleColor,highlightColor,buttonBackgroundColor,buttonTextColor,forWhoColor,adtinionalInfoColor,imageAlt]
+      Que permite bastante personalizações.
+      Temos um trecho importante de código:
+        - const isEven = id % 2 === 0;
+        - const flexDirection = isEven ? 'row-reverse' : 'row';
+          - Caso o valor do id for par a imagem fica a esquerda, se não a direita.
+
+    - ContactBanner2.tsx
+      - Ele é o Banner de contato do blog comsiste em.  imagem , texto e botão.
+
+    - ContactCard.tsx 
+      - Onde fica o formulário de contato e uma imagem.
+        - O formulário de contato precisa 
+        const API_URL = import.meta.env.VITE_API_BASE_URL; que fica no .env do front.
+        E do back-end rodando para funcionar da forma adequada. Imprimi um status  {status && <p>{status}</p>}
+
+    - Footer.tsx
+      - O rodapé consiste em : [logo, menu de redes sociais, menu de páginas do site]
+      Usado em todas as págians do site.
+
+    - Header.tsx
+      - 'Cabeçalho' : Consiste em Logo menu de páginas do site com um botão de contato no último indice.
+      Com um menu hamburguer na versão até width: 992px.
+       usado em todas as páginas do site.
+    
+    - Main.tsx
+      - Onde fica o conteudo principal da página home.
+      Só utilizado 1x.
+    
+    - MenuPost.tsx
+      - Uma div com título e link para o local determinado na chamada do componente.
+    - ObjectDecoretionM2.tsx , ObjectMDecoretion.tsx
+    e  ObjetctPDecoretion.tsx  consiste em objetos de decoração. o M2 e  M tem uma imagem fixa.
+    o P é puro css.
+    A chamada deles é bem semelhante :
+    o M2 M
+    <ObjectMDecoretionM2 style={{position:'absolute', bottom:"-60px", right:"50%" }}/>
+
+    <ObjectPDecoretion style={{position : 'absolute', bottom:'-60px' , right:'48%', backgroundColor : '#FEC820'}} />
+
+    - PostBanner.tsx
+      - Banner para os post da página blog.
+
+    - PostBodyNotice.tsx
+      - Onde é mapeado o corpo da notícia(post). Tem muitas variáveis / propriedades. Dentro dele tem o <ShareMenu url={url} title={titulo} />
+      que é o menu de compartilhamento. Recomendo ver o exemplo de uso.
+    
+    - PostCard.tsx
+      - Cards dos posts, destaque para <Link to={`/post${link}/${id}`} className="post-card-link"> , para pode ser reutilizado tanto na páginas post-projects tanto na post.
+       Aparece de duas formas  link: `` e   link: `-projects`
+
+    - PostContainer.tsx
+      - Onde fica todo o corpo do post abaixo do banner. Perceba que é nele que será 'adicionado' os valores dentro de outros componente que estão dentro de outros componentes. Indico ver o código e o exemplo de uso . ver o exemplo completo no NewPostProjects.tsx
+
+    - ShareMenu.tsx
+      - Ver os comentários.
+    
+    - TopHeader.tsx
+      - Está em toda página é o slogan que fica acima do header.tsx. vai adicionando letra por letra a cada determinado tempo
+
+  Dentro da pasta pages
+    - blog.tsx
+    - FaleComnosco.tsx
+    - NewPost.tsx
+    - NewPostProjects.tsx
+    - NossosProjetos.tsx
+    - Projetos.tsx
+    - quemSomos.tsx
+    - Servico.tsx
 
 

@@ -44,6 +44,18 @@ const ContactBanner: React.FC<ContactBannerProps> = ({
   const flexDirection = isEven ? 'row-reverse' : 'row';
 
   return (
+    /*Exemplos de uso
+      <ContactBanner id={0} backgroundColor="#ffffff" titleColor="#000000" subtitleColor="#000000" buttonBackgroundColor="#0097A3" buttonTextColor="#FFFFFF" title=" Gestão Pública da Cultura" subtitle="Oferecemos consultoria técnica especializada para governos e instituições públicas que desejam fortalecer suas políticas culturais. Atuamos na construção, execução e avaliação de programas como a Política Nacional Aldir Blanc (PNAB), a Lei Paulo Gustavo, e outros marcos importantes para a cultura.
+        Desenvolvemos metodologias participativas, elaboração de editais, planos de ação, diagnósticos, instrumentos normativos e relatórios de impacto. Trabalhamos lado a lado com gestões comprometidas em ampliar o acesso, promover diversidade e estruturar o campo cultural com planejamento e visão de futuro." 
+        highlightText="" buttonText="Da ideia à ação: saiba mais..." forWhoColor="#00000"
+      />
+
+      <ContactBanner id={1} backgroundColor="#ffffff" titleColor="#000000" subtitleColor="#000000" buttonBackgroundColor="#0097A3" buttonTextColor="#FFFFFF" title="Projetos Criativos e Mentoria Artística" subtitle="Apoiamos profissionais da cultura e da economia criativa no desenvolvimento de projetos que unem identidade, inovação e viabilidade. Nossa mentoria é voltada para artistas, instituições públicas, privadas, coletivos, marcas e empreendedores criativos que desejam estruturar suas ideias, fortalecer sua narrativa e apresentá-las de forma sólida.
+        Combinamos escuta qualificada e planejamento estratégico para transformar iniciativas criativas em propostas consistentes, prontas para editais, captação, pitchings ou execução direta. Atuamos em múltiplas linguagens e formatos, respeitando a singularidade de cada proposta e ajudando a expandir seu alcance e impacto." highlightText="" buttonText="Da ideia à ação: saiba mais..."
+        />
+
+    */
+
     <section
       className="contact-banner"
       style={{

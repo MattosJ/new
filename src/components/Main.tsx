@@ -8,7 +8,10 @@ import ObjectPDecoretion from "./ObjectPDecoretion";
 
 const Main = () => {
   return (
-    <div className="main-container">
+    /* Exemplo de uso
+       <Main/>
+    */
+    <main className="main-container">
       <BannerTextImage  title="Conecta, Cria e Transforma!"
         subtitle="Aqui, construímos pontes para um mundo mais colaborativo, justo e criativo."
         style={{ backgroundImage: `url(${bannerImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}/>
@@ -16,7 +19,7 @@ const Main = () => {
       <ContactBanner id={1} forWho="" adtinionalInfo="" titleColor="#FFFFFF"/>
       <ObjectMDecoretionM2 style={{position:'absolute', bottom:"-60px", right:"50%" }}/>
     <ObjectPDecoretion style={{position : 'absolute', bottom:'-60px' , right:'48%', backgroundColor : '#FEC820'}} />
-    </div>
+    </main>
   );
 };
 

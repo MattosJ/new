@@ -13,16 +13,19 @@ type ShareMenuProps = {
 };
 
 const ShareMenu: React.FC<ShareMenuProps> = ({ url,  }) => {
-  const encodedUrl = encodeURIComponent(url);
+  // Exemplo de uso:
+      // <ShareMenu url={url} title={titulo} />
 
+  const encodedUrl = encodeURIComponent(url); // recebe a url atual para direcionar o compartilhamento.
 
+  // linkagem para compartilhamento da notícia
   const shareLinks = {
     whatsapp: `https://wa.me/?text=%20${encodedUrl}`,
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
     linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}`,
     twitter: `https://twitter.com/intent/tweet?text=&url=${encodedUrl}`
   };
-
+  // Mensagem de sucesso ou falha.
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(url);

@@ -22,6 +22,10 @@ const CardsContainerProjects = () => {
 
 
   return (
+    /* Exemplo de uso 
+      <CardsContainerProjects/>
+    */
+
     <div className="CardsContainer">
       <div className="cardsContainer-menu-projects">
         <h2 className="CardsContainer-title">

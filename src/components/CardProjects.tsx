@@ -26,6 +26,18 @@ const CardProjects: React.FC<CardProjectsProps> = ({
   themeColor = "#00a7e1",
 }) => {
   return (
+    /* Exemplo de uso 
+    <CardProjects
+      key={projeto.id} 
+      title={projeto.titleCard}
+      audience={projeto.forWho}
+      subtitle={projeto.subtitleCard}
+      description={projeto.descriptionCard}
+      image={projeto.imageCard}
+      themeColor={projeto.colorCard}
+    />
+    */
+
     <div
       className={`CardService-Card ${className}`}
       style={{ borderColor: themeColor, ...style }}

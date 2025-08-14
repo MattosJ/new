@@ -13,7 +13,17 @@ interface BannerProjetosProps{
 
 const BannerProjets:React.FC<BannerProjetosProps>  = ({title,highlight,text1,text2,text3,image,imageAlt}) =>{
   return(
-
+    /* Exemplo de uso 
+          <BannerProjetos title= {projetos[0].title} 
+          image= {projetos[0].imagePostBanner1}
+          highlight= {projetos[0].author}
+          text1= {projetos[0].afterTitle2Text1Notice}
+          text2= {projetos[0].afterTitle2Text2Notice}
+          text3= {projetos[0].afterTitle2Text3Notice}
+          imageAlt={projetos[0].title} 
+          
+        />
+    */
 
   <div className="BannerProjetos-wrapper">
     <div className="BannerProjetos-content">

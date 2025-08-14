@@ -5,7 +5,11 @@ import whatsapp from "../assets/WhatsApp.svg"
 import Youtube from "../assets/youtube.png"
 import { Link } from 'react-router-dom'
 const Footer = () =>{
-  return <footer className='footer'>
+  return(
+    /* Exemplo de uso 
+      <Footer />
+    */
+    <footer className='footer'>
     <div className='menu-1-footer'>
         <div className='logo-footer'>
           <h1>Intera Criativa</h1>
@@ -30,7 +34,7 @@ const Footer = () =>{
       </nav>
       <nav className='menu-3-footer'>
         <ul>
-          <li><Link to="/por-onde-passamos">Trajetória</Link></li>
+          <li><Link to="/quem-somos">Quem Somos</Link></li>
           <li><Link to="/blog">Blog</Link></li>
           <li><Link to="/fale-conosco">Contato</Link></li>
         </ul>
@@ -41,5 +45,7 @@ const Footer = () =>{
 
     
   </footer>
+  )
+   
 }
 export default Footer

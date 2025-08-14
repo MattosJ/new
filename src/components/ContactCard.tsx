@@ -13,9 +13,10 @@ const ContactCard = () => {
     e.preventDefault();
 
     const formData = { name, email, message };
+    const API_URL = import.meta.env.VITE_API_BASE_URL;
 
     try {
-      const response = await axios.post('http://localhost:5000/send-email', formData);
+      const response = await axios.post(`${API_URL}/send-email`, formData);
 
       if (response.data.success) {
         setStatus('E-mail enviado com sucesso!');
@@ -29,6 +30,10 @@ const ContactCard = () => {
   };
 
   return (
+    /* Exemplo de uso 
+      <ContactCard/>
+    */
+
     <div className="container-contact">
       <form className="contact-form" onSubmit={handleSubmit}>
         <h2>Fale Com a Gente</h2>

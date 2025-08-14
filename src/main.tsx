@@ -5,7 +5,6 @@ import QuemSomos from './pages/quemSomos.tsx'
 import FaleComnosco from './pages/FaleComnosco.tsx'
 import Servicos from './pages/Servicos.tsx'
 import NossosProjetos from './pages/NossosProjetos.tsx'
-import PorOndePassamos from './pages/PorOndePassamos.tsx'
 import Blog from './pages/Blog.tsx'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import NewsPost from './pages/NewPost.tsx'
@@ -29,10 +28,6 @@ const router = createBrowserRouter([
   {
     path:'/servicos',
     element: <Servicos/>,
-  },
-  {
-    path:'/por-onde-passamos',
-    element: <PorOndePassamos/>,
   },
   {
     path:'/nossos-projetos',

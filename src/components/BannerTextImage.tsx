@@ -10,6 +10,13 @@ interface BannerTextImageProps {
 
 const BannerTextImage: React.FC<BannerTextImageProps> = ({ title, subtitle }) => {
   return (
+    /*Exemplo de uso 
+        <BannerTextImage  title="Conecta, Cria e Transforma!"
+          subtitle="Aqui, construímos pontes para um mundo mais colaborativo, justo e criativo."
+          style={{ backgroundImage: `url(${bannerImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+        />
+    */
+
     <div
       className="banner-wrapper"
       style={{ backgroundImage: `url(${BannerBg})` }}

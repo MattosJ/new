@@ -29,6 +29,19 @@ const CardService: React.FC<CardServiceProps> = ({
   themeColor = "#00a7e1",
 }) => {
   return (
+    /* Exemplo de uso
+        <CardService
+          key={projeto.id}
+          id={projeto.id} 
+          title={projeto.titleCard}
+          audience={projeto.forWho}
+          subtitle={projeto.subtitleCard}
+          buttonText={projeto.btnProjetcts}
+          description={projeto.descriptionCard}
+          image={projeto.imageCard}
+          themeColor={projeto.colorCard}
+        />
+    */
     <Link
       to={`/post-projects/${id}`} //  link para o post
       className={`CardService-Card ${className}`}

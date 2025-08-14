@@ -26,6 +26,10 @@ const PostBodyNotice:React.FC<PostBodyNoticeProps> = ({initText,title1,descripti
   const url = window.location.href
   const titulo = "Título da notícia"
   return(
+    /* Exemplo de uso 
+      <PostBodyNotice {...bodyNoticeProps} />
+    */
+
     <div className  = "post-body-notice" >
       <p>{initText}</p>
       <h3 className="post-body-notice-title">{title1}</h3>

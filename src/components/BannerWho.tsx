@@ -2,9 +2,13 @@ import "../components/styles/BannerWho.css"
 import img from '../assets/Group 20 (2).png'
 const BannerWho = () =>{
   return(
+    /* Exemplo de uso 
+      <BannerWho/>
+    */
+
     <div className="bannerWho-container">
       <div className="bannerWhoImgFormat">
-        <img src={img} alt="Texto"/>
+        <img src={img} alt="Juntos criamos novos caminhos"/>
       </div>
       <div className="bannerWhoContent">
         <div className="bannerWhoTitleContainer">

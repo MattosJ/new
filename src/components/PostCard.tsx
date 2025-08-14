@@ -8,6 +8,13 @@ interface PostCardProps{
 
 const PostCard: React.FC<PostCardProps> = ({ id, image, title , link }) => {
   return (
+    /* Exemplos de uso 
+       <PostCard key={card.id} id={card.id} image={card.image} title={card.title}  link={card.link}/>
+        {postCards.map((card ) => (
+          <PostCard key={card.id} id={card.id} image={card.image} title={card.title}  link={card.link}/>
+        ))}
+    */
+
     <Link to={`/post${link}/${id}`} className="post-card-link">
       <div className="post-card">
         <div className="post-card-img">
